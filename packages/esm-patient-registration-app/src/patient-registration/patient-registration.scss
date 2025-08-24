@@ -1,0 +1,204 @@
+@use '@carbon/layout';
+@use '@carbon/type';
+@use '@openmrs/esm-styleguide/src/vars' as *;
+
+.submit {
+  width: 15.625rem;
+}
+
+.submit:hover {
+  cursor: pointer;
+}
+
+// .buttonRow {
+//   display: flex;
+//   gap: 1rem;
+//   margin-top: 2rem;
+//   margin-bottom: 2rem;
+//   justify-content: flex-start;
+//   flex-wrap: wrap;
+//   align-items: center;
+// }
+
+.commonButtonSize {
+  width: 100%;
+  padding: 2rem 3rem;
+  font-size: 2rem;
+  font-weight: 900;
+  border-radius: 14px;
+  letter-spacing: 1.8px;
+  display: flex;               // changed from block
+  justify-content: center;     // horizontal center
+  align-items: center;         // vertical center
+  box-sizing: border-box;
+  margin-bottom: 1.5rem;
+  min-width: 0;
+  cursor: pointer;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+.submitButton {
+  background-color: #2f9649;
+  color: rgb(222, 236, 221);
+  box-shadow: 0 6px 12px rgba(0, 121, 107, 0.5);
+  border: none;
+}
+
+.submitButton:hover {
+  background-color: #196e1d;
+  box-shadow: 0 8px 16px rgba(0, 150, 136, 0.7);
+}
+
+.cancelButton {
+  background-color: #ad2222; /* A softer teal to match submit */
+  color: #f0e7ea;            /* Darker teal text */
+  border: 2px solid #80cbc4; /* Matching border color */
+  box-shadow: none;
+}
+
+.cancelButton:hover {
+  background-color: #f10707;
+  border-color: #467c4a;
+  color: #f7f1f1;
+}
+/* Modal overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.modalContent {
+  background: #ffffff;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  max-width: 650px;
+  width: 90%;
+  max-height: 85%;
+  overflow-y: auto;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal heading */
+.modalContent h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #00796b; /* teal header for emphasis */
+  text-align: center;
+}
+
+/* Modal paragraph */
+.modalContent p {
+  font-size: 1.6rem;       /* larger, readable font */
+  line-height: 2.2rem;     /* good spacing between lines */
+  color: #333333;          /* dark text for readability */
+  margin-bottom: 2rem;
+  text-align: justify;      /* easier to read */
+}
+
+/* Modal buttons container */
+/* Modal buttons container */
+.modalContent button {
+  margin: 0;          // remove button's own margin
+  width: 50%;         // optional: fixed width
+  align-self: center; // center horizontally
+}
+
+
+
+/* Last button margin fix */
+.modalContent button:last-child {
+  margin-right: 0;
+}
+
+
+.infoGrid {
+  width: 100%;
+  padding-left: layout.$spacing-07;
+  margin-bottom: 40vh;
+  margin-top: layout.$spacing-05;
+  max-width: 50rem;
+}
+
+:global(.omrs-breakpoint-lt-desktop) {
+  .infoGrid {
+    max-width: unset;
+  }
+}
+
+.label01 {
+  @include type.type-style('label-01');
+  margin-top: layout.$spacing-05;
+  margin-bottom: layout.$spacing-05;
+  color: $ui-05;
+}
+
+.space05 {
+  margin: layout.$spacing-05 0;
+}
+
+.formContainer {
+  display: flex;
+  width: 100%;
+}
+
+.stickyColumn {
+  position: sticky;
+  margin-top: layout.$spacing-05;
+  // layout.$spacing-09 for the nav height and layout.$spacing-05 for top margin
+  top: layout.$spacing-10;
+}
+
+.touchTarget a:active {
+  color: $color-gray-100;
+}
+
+.linkName {
+  color: $color-gray-70;
+  line-height: 1.38;
+  font-size: layout.$spacing-05;
+  font-weight: 600;
+
+  &:active {
+    text-decoration: none;
+    color: $color-gray-100;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $color-gray-100;
+    cursor: pointer;
+  }
+}
+
+.spinner {
+  min-height: layout.$spacing-05;
+  width: max-content;
+
+  :global(.cds--inline-loading__text) {
+    @include type.type-style('body-01');
+  }
+}
+
+// Overriding styles for RTL support
+html[dir='rtl'] {
+  .linkName {
+    & > svg {
+      transform: scale(-1, 1);
+    }
+  }
+
+  .infoGrid {
+    padding-left: unset;
+    padding-right: layout.$spacing-07;
+  }
+}

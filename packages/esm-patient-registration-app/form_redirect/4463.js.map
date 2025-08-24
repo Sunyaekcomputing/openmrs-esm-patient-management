@@ -1,0 +1,1 @@
+{"version":3,"file":"4463.js","mappings":"2OAUA,QAPA,SAA+BA,GAI7B,OAHAC,QAAQC,KACN,oJAEK,kBAACC,EAAAA,aAAiBH,EAC3B,C","sources":["webpack://@openmrs/esm-patient-registration-app/./src/patient-photo.extension.tsx"],"names":["props","console","warn","PatientPhoto"],"sourceRoot":""}
