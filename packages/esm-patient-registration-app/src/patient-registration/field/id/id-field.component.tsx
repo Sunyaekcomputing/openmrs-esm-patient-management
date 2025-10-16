@@ -123,13 +123,13 @@ export const Identifiers: React.FC = () => {
       <UserHasAccess privilege={['Get Identifier Types', 'Add patient identifiers']}>
         <div className={styles.identifierLabelText}>
           {/* <h4 className={styles.productiveHeading02Light}>{t('idFieldLabelText', 'Identifiers')}</h4> */}
-          {/* <Button
+          <Button
             kind="ghost"
             className={styles.configureIdentifiersButton}
             onClick={() => setShowIdentifierOverlay(true)}
             size={isDesktop(layout) ? 'sm' : 'md'}>
             {t('configure', 'Configure')} <ArrowRight className={styles.arrowRightIcon} size={16} />
-          </Button> */}
+          </Button>
           
         </div>
         

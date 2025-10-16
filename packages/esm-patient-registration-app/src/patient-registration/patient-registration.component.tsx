@@ -29,6 +29,8 @@ import { launchWorkspace } from '@openmrs/esm-framework';
 import { formEntryWorkspace } from '@openmrs/esm-patient-common-lib';
 import { WorkspaceContainer } from '@openmrs/esm-framework';
 // import { launchPatientWorkspace } from "@openmrs/esm-patient-common-lib";
+import { navigate } from '@openmrs/esm-framework';
+
 
 
 
@@ -459,8 +461,9 @@ useEffect(() => {
                   <Button
                     className={`${styles.commonButtonSize} ${styles.submitButton}`}
                     onClick={() => {
-                      setShowCancelConfirm(false);
-                      cancelRegistration(); // discard changes
+                      // setShowCancelConfirm(false);
+                      navigate({ to: '/openmrs/spa/home' });
+                      // cancelRegistration(); // discard changes
                     }}
                   >
                     चाहन्छु

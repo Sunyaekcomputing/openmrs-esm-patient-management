@@ -21,13 +21,20 @@ const VisitDetailComponent: React.FC<VisitDetailComponentProps> = ({ visitUuid, 
   const encounters = useMemo(
     () =>
       visit
-        ? visit?.encounters?.map((encounter) => ({
-            id: encounter.uuid,
-            time: formatTime(parseDate(encounter.encounterDateTime)),
-            encounterType: encounter.encounterType.display,
-            provider: encounter.encounterProviders.length > 0 ? encounter.encounterProviders[0].display : '',
-            obs: encounter.obs,
-          }))
+        ? visit?.encounters?.map((encounter) => {
+            // 👇 Debug each encounter's obs
+            console.log("Encounter UUID:", encounter.uuid);
+            console.log("Encounter Type:", encounter.encounterType?.display);
+            console.log("Encounter Obs:", encounter.obs);
+
+            return {
+              id: encounter.uuid,
+              time: formatTime(parseDate(encounter.encounterDateTime)),
+              encounterType: encounter.encounterType.display,
+              provider: encounter.encounterProviders.length > 0 ? encounter.encounterProviders[0].display : '',
+              obs: encounter.obs,
+            };
+          })
         : [],
     [visit],
   );

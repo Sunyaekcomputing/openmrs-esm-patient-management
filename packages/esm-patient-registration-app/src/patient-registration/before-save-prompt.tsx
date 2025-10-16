@@ -51,7 +51,7 @@ const BeforeSavePrompt: React.FC<BeforeSavePromptProps> = ({ when, redirect }) =
 
   useEffect(() => {
     if (when && typeof target === 'undefined') {
-      window.addEventListener('single-spa:before-routing-event', cancelNavigation);
+      // window.addEventListener('single-spa:before-routing-event', cancelNavigation);
       window.addEventListener('beforeunload', cancelUnload);
 
       return () => {
